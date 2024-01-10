@@ -20,6 +20,7 @@ for line in datafile.readlines():
 print(outputlist)
 '''
 
+'''
 outputlist = ["karina.hammes@turner.com\n"]
 #print(outputlist)
 for line in datafile.readlines():
@@ -32,12 +33,32 @@ for line in datafile.readlines():
             print(line)
             outputlist.append(line)
             break
+'''
+
+outputlist = []
+removedupe = False
+for line in datafile.readlines():
+    #print(line)
+    #print("outputlist: " + str(outputlist))
+    for listitem in outputlist:
+        #print(listitem)
+        if listitem == line:
+            print("It already exists, do nothing")
+            removedupe == True
+            print(removedupe)
+            if removedupe:
+                removedupe = False  #reset removedupe
+            else:
+                outputlist.append(line)
+                print("Adding it to output")
+                print(line)
+
 
 print('======')
 print(outputlist)
 
 for outputline in outputlist:
-    outputfile.write(outputline) 
+    outputfile.write(outputline)
 
 '''
 for line1 in datafile.readlines():
