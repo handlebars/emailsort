@@ -44,15 +44,15 @@ for line in datafile.readlines():
         #print(listitem)
         if listitem == line:
             print("It already exists, do nothing")
-            removedupe == True
             print(removedupe)
-            if removedupe:
-                removedupe = False  #reset removedupe
-            else:
-                outputlist.append(line)
-                print("Adding it to output")
-                print(line)
-
+            removedupe = True
+            break
+    if removedupe:
+        removedupe = False  #reset removedupe
+    else:
+        outputlist.append(line)
+        print("Adding it to output")
+        print(line)
 
 print('======')
 print(outputlist)
